@@ -1,0 +1,50 @@
+<!-- // [ngClass]="{'has-cards': getPath()!=='/user-profile' && getPath()!=='/auth/register' && getPath()!=='/auth/login'}" -->
+<footer class="footer" style="background-color: #6e6967;">
+  <div class="container">
+    <div class="row row-grid align-items-center" [ngClass]="{'my-md': getPath()!=='/user-profile' && getPath()!=='/auth/register' && getPath()!=='/auth/login', 'mb-5':getPath()==='/user-profile' || getPath()==='/auth/register' || getPath()==='/auth/login'}">
+      <div class="col-lg-6">
+        <h4 class="font-weight-bold mb-2" style="color:#fb6340;">Thank you!</h4>
+        <p class="mb-0 text-white font-weight-light">Let's get in touch on any of our Social platforms.</p>
+      </div>
+      <div class="col-lg-6 text-lg-center btn-wrapper">
+        <a target="_blank" href="https://twitter.com/princephilay" class="btn btn-neutral btn-icon-only btn-twitter btn-round btn-lg" ngbTooltip="Follow us">
+          <i class="fa fa-twitter"></i>
+        </a>
+        <a target="_blank" href="https://www.facebook.com/paogunwobi" class="btn btn-neutral btn-icon-only btn-facebook btn-round btn-lg" ngbTooltip="Like us">
+          <i class="fa fa-facebook-square"></i>
+        </a>
+        <a target="_blank" href="https://www.linkedin.com/in/philip-ayodeji-ogunwobi-995a7086/" class="btn btn-neutral btn-icon-only btn-linkedin btn-round btn-lg" ngbTooltip="Connect with us">
+          <i class="fa fa-linkedin"></i>
+        </a>
+        <a target="_blank" href="https://github.com/paogunwobi" class="btn btn-neutral btn-icon-only btn-github btn-round btn-lg" ngbTooltip="Star on Github">
+          <i class="fa fa-github"></i>
+        </a>
+      </div>
+    </div>
+    <hr style="background-color: #fff !important;">
+    <div class="row align-items-center justify-content-md-between">
+      <div class="col-md-4 s-col-xs-12">
+        <div class="copyright text-white font-weight-bold">
+          &copy; {{test | date: 'yyyy'}}
+          <a href="#" style="color: #fb6340;" target="_blank">Lieferung</a>.
+        </div>
+      </div>
+      <div class="col-md-8">
+        <ul class="nav nav-footer justify-content-end">
+          <li class="nav-item">
+            <a href="#" class="nav-link" target="_blank">Lieferung</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" target="_blank">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" target="_blank">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" target="_blank">MIT License</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>

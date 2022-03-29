@@ -1,0 +1,21 @@
+.imge {
+  width: 100%;
+  min-height: 200px;
+  margin: 1em 0;
+  background-size: cover;
+  object-position: center;
+}
+
+.topT {
+  margin-top: 100px !important;
+}
+
+.cursr {
+  cursor: pointer;
+}
+
+.stickyT {
+    position:fixed;
+    top:5;
+    z-index:100;
+}

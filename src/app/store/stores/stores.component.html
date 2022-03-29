@@ -1,0 +1,109 @@
+
+<section class="container-fluid mt-5">
+
+  <div class="">
+    <div class="container header topT mt-5 bg-secondary pb-6">
+      <div class="px-4">
+        <div class="header-body">
+          <div class="row align-items-center py-3" style="vertical-align: middle;">
+            <div class="col-lg-4 mx-auto mb-1 mt-1">
+              <div *ngIf="locate" class="pt-3 form-inline">
+                <span class="mr-2" style="font-weight: 300; font-size: 12px;">Change Address:</span> <a (click)="locate=!locate" class="mr-1 badge badge-primary"> {{reduceLength(currentAddressString)}} <i class="mx-1 fa fa-caret-down" style="font-size: 14px;" aria-hidden="true"></i></a>
+              </div>
+              <div class="btn-wrapper pt-3" style="vertical-align: middle;">
+                <div *ngIf="!locate" class="form-group form-inline" [ngClass]="{'focused':focus===true}">
+                  <div class="input-group input-group-sm" [ngClass]="{'has-success':locate}" style="width: 70%;">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-location-arrow" aria-hidden="true"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Enter Delivery Address" type="text" [(ngModel)]="currentAddressString" id="stores-AddressString" (focus)="focus=true" (blur)="focus=false">
+                  </div>
+                  <button routerLink="/stores" [disabled]="!locate" class="btn btn-sm btn-github btn-icon mx-1 mb-sm-0" style="width: 27%;" target="_blank">
+                    <span (click)="this.updateAddress()" >UPDATE</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 mb-1 mt-1">
+              <div class="" ngbDropdown>
+                <a class="btn btn-sm btn-default bg-white dropdown-toggle " id="navbarDropdownMenuLink2" ngbDropdownToggle>
+                  <i class="fa fa-filter" aria-hidden="true"></i> Filters
+                </a>
+                <div class="" style="height: 50vh;" aria-labelledby="navbarDropdownMenuLink2" ngbDropdownMenu>
+
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5 text-md-right mb-1 mt-1" style="overflow-x: scroll; scrollbar-width: none; overflow: hidden;">
+              <a href="javascript:void(0)" class="mx-1 badge badge-danger">Fast Food</a>
+              <a href="javascript:void(0)" class="mx-1 badge badge-primary">Pizza</a>
+              <a href="javascript:void(0)" class="mx-1 badge badge-success">Cakes</a>
+              <a href="javascript:void(0)" class="mx-1 badge badge-info">Burger</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mx-auto my-4">
+    <div class="container" style="min-height: 50vh;">
+
+      <div class="row">
+        <h3 class="title mt-3 mb-4">Restaurants near me</h3>
+      </div>
+
+      <ngx-spinner *ngIf="loading" size="medium" [type]="typeSelected"></ngx-spinner>
+      <span *ngIf="!loading">
+        <div class="row" *ngIf="restaurantList.length > 0">
+          <div *ngFor="let item of restaurantList" class="col-md-6 p-3">
+            <div class="card card-plain cursr mb-3" (click)="gotoDetails(item)" >
+              <div class="row border-1" style="background-color: #f3f3f3;">
+                <div class="col-md-4">
+                  <div class="card-image shadow">
+                    <div class="imge" style="background-image: url(../../../../../assets/img/theme/image-3.jpg);">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h3 class="card-title">
+                      <a style="color:#3d3dc5; font-weight: 600;">{{item?.poi?.name}}</a>
+                    </h3>
+
+                    <p class="font-weight-bold">
+                      <span class="mr-3" *ngFor="let cat of item?.poi?.categories">* {{ cat }}</span>
+                    </p>
+                    <div class="author">
+                      <div class="text my-1">
+                      </div>
+                      <div class="text mt-1 my-1">
+                        <span class="mr-2" style="font-weight: 400; font-size: 14px;"><span class="mr-2" style="font-weight: 300; font-size: 13px;">Address:</span>{{ item?.address?.streetNumber}} {{ item?.address?.streetName}} {{ item?.address?.municipalitySubdivision }}, {{item?.address?.municipality}}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row text-center mx-auto" *ngIf="restaurantList.length < 1">
+          <div class="col-lg-6 col-md-8">
+            <div>
+                <h1 class="display-2 error-text fw-bold"><i class="fa fa-frown-o align-bottom text-primary mx-1"></i></h1>
+            </div>
+            <div>
+                <h4 class="text-uppercase mt-4">Sorry, No Result Found</h4>
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+                <div class="mt-4">
+                    <a href="/home" class="btn btn-primary"><i class="ri-arrow-left-line align-bottom mr-2"></i>Back to Home</a>
+                </div>
+            </div>
+        </div>
+
+        </div>
+      </span>
+    </div>
+  </div>
+
+</section>

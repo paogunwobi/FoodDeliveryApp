@@ -1,0 +1,52 @@
+<nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom headroom--top headroom--pinned">
+  <div class="container">
+    <a class="navbar-brand mr-lg-5" [routerLink]="['/home']">
+      <img src="./assets/img/brand/logo-white.png">
+    </a>
+    <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed"
+          [attr.aria-expanded]="!isCollapsed" aria-controls="navbar_global">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse" id="navbar_global" [ngbCollapse]="isCollapsed">
+      <div class="navbar-collapse-header">
+        <div class="row">
+          <div class="col-6 collapse-brand">
+            <a [routerLink]="['/home']">
+              <img src="./assets/img/brand/blue.png">
+            </a>
+          </div>
+          <div class="col-6 collapse-close">
+            <button type="button" class="navbar-toggler" (click)="isCollapsed = !isCollapsed"
+                  [attr.aria-expanded]="!isCollapsed" aria-controls="navbar_global">
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <ul class="navbar-nav navbar-nav-hover align-items-lg-center"></ul>
+      <ul class="navbar-nav align-items-lg-center ml-lg-auto">
+        <!-- <li class="nav-item">
+          <a class="nav-link nav-link-icon" routerLink="#" target="_blank" data-toggle="tooltip" title="Cart">
+            <i class="fa fa-shopping-cart"></i>
+            <span class="nav-link-inner--text d-lg-none mx-2">Cart</span>
+          </a>
+        </li> -->
+        <li class="nav-item d-none d-lg-block ml-lg-4">
+          <a href="/auth/login" class="btn btn-neutral btn-icon">
+            <span class="nav-link-inner--text">LOGIN</span>
+          </a>
+        </li>
+      </ul>
+      <div>
+        <select class="custom-select bg-transparent" (change)="updateLocale($event)" style="color: #d6d3d3;">
+          <option *ngFor="let item of locales" [value]="item.value" [selected]="item.value === locale">
+            {{ item.label }}
+         </option>
+        </select>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
