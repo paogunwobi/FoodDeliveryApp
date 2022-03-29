@@ -1,10 +1,18 @@
 # FoodDeliveryApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
+To Run FoodDeliveryApp (Angular App) Locally (Download or Clone the repository)
 
-## Development server
+To Clone, Run `git clone https://github.com/paogunwobi/FoodDeliveryApp.git` 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Navigate to the root of the project, same path where the package.json file is located using `cd FoodDeliveryApp` in your terminal.
+
+Run `npm install` to Install Dependencies [to run this on a local machine REQUIRES ANGULAR CLI (Preferably the latest version as at 03-29-2022), NodeJs and NPM Packages install
+
+After Successfull Installations.
+
+Run `ng serve` for a dev server (Local Machine or Environment). Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+The APP Requires some API KEYs to work, which are not current in the repository. 
 
 ## Code scaffolding
 
