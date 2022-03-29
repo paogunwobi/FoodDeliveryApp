@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'http://localhost:3000/api',
+  accessToken: '<API KEY - https://arcgis.com/ >',
+  tomtomKey: '<API KEY - https://developer.tomtom.com/ >',
+  domain: 'localhost' // or 'your.domain.com'
 };
 
 /*
