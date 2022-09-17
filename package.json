@@ -20,7 +20,7 @@
     "@angular/platform-browser-dynamic": "~13.1.0",
     "@angular/router": "~13.1.0",
     "@angular/service-worker": "^13.3.0",
-    "@ng-bootstrap/ng-bootstrap": "^12.0.1",
+    "@ng-bootstrap/ng-bootstrap": "^12.1.2",
     "@ngneat/transloco": "^4.0.0",
     "@ngneat/transloco-locale": "^4.0.0",
     "@ngneat/transloco-messageformat": "^4.0.0",
